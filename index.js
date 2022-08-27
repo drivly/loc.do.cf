@@ -39,7 +39,7 @@ export class DurableObject {
     if (!object) {
       let object = await getColo()
       let id = this.env.durableObjects.idFromName('/')
-      return this.env.durableObjects.get(id).fetch(null, {
+      return this.env.durableObjects.get(id).fetch('https://loc.do.cf', {
         method: 'POST',
         body: JSON.stringify({city, worker, object})
       })
