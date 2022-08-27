@@ -1,5 +1,14 @@
 name = "loc-do-cf"
 account_id = "b6641681fe423910342b9ffa1364c76d"
 route = { pattern = "loc.do.cf/*", zone_id = "610c7d50a0eb08ba67af06925613f507" }
-main = "worker.js"
+main = "index.js"
 compatibility_date = "2022-08-23"
+
+
+[durable_objects]
+bindings = [{name = "durableObjects", class_name = "DurableObject"}]
+
+[[migrations]]
+tag = "v1" # Should be unique for each entry
+new_classes = ["DurableObject"]
+
