@@ -20,7 +20,7 @@ export default {
 
     let {colo: worker, city} = request.cf
     let id = env.durableObjects.newUniqueId()
-    return env.durableObjects.get(id).fetch(null, {
+    return env.durableObjects.get(id).fetch('https://loc.do.cf', {
       method: 'POST',
       body: JSON.stringify({city, worker})
     })
